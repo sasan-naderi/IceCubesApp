@@ -6,5 +6,5 @@ jobs:
     resource_class: m2pro.large
     steps:
       - checkout
-      - run: "xcodebuild -resolvePackageDependencies -project IceCubesApp.xcodeproj -scheme Env"
-      - run: "xcodebuild build -scheme Env -project /Volumes/workspace/repository/IceCubesApp.xcodeproj -destination generic/platform=iOS -IDEPostProgressNotifications=YES CODE_SIGN_IDENTITY=- AD_HOC_CODE_SIGNING_ALLOWED=YES COMPILER_INDEX_STORE_ENABLE=NO"
+      - run: "xcodebuild -resolvePackageDependencies -project IceCubesApp/IceCubesApp.xcodeproj -scheme Env"
+      - run: "xcodebuild build -scheme Env -project IceCubesApp/IceCubesApp.xcodeproj -destination generic/platform=iOS -IDEPostProgressNotifications=YES CODE_SIGN_IDENTITY=- AD_HOC_CODE_SIGNING_ALLOWED=YES COMPILER_INDEX_STORE_ENABLE=NO"
