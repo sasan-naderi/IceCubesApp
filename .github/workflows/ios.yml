@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -switch /Applications/Xcode_16.app/Contents/Developer
       - name: Resolve Package Dependencies
         run: |
           xcodebuild -resolvePackageDependencies -project IceCubesApp.xcodeproj -scheme Env
