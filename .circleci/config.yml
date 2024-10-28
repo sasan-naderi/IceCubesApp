@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     macos:
-      xcode: "15.4.0"
+      xcode: "16.0.0"
     resource_class: m2pro.large
     steps:
       - checkout
