@@ -1,0 +1,20 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-latest-xlarge
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Resolve Package Dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies -project IceCubesApp.xcodeproj -scheme Env
+      - name: Build
+        run: |
+          xcodebuild build -project IceCubesApp.xcodeproj -scheme Env -destination "generic/platform=iOS"
